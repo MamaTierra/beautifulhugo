@@ -820,3 +820,7 @@ img.logo_copyright {
   padding-top: 1em;
   width: 6em;
 }
+
+article.blog-post img {
+  padding-bottom: 1em;
+}
