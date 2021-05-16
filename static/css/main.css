@@ -767,7 +767,7 @@ div.splitbox div.right {
     padding: 15px 25px;
   }
 }
-.disqus-comments button:hover, 
+.disqus-comments button:hover,
 .disqus-comments button:focus {
   color: #FFF;
   background: #0085a1;
@@ -814,4 +814,9 @@ h4.see-also {
 }
  ul.share li:hover .fab {
   transform: scale(1.4)
+}
+
+img.logo_copyright {
+  padding-top: 1em;
+  width: 6em;
 }

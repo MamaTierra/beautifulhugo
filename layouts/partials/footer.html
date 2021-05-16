@@ -30,25 +30,13 @@
           {{ end }}
         </ul>
         <p class="credits copyright text-muted">
-          {{ if .Site.Author.name }}
-            {{ if .Site.Author.website }}
-              <a href="{{ .Site.Author.website }}">{{ .Site.Author.name }}</a>
-            {{ else }}
-              {{ .Site.Author.name }}
-            {{ end }}
-          {{ end }}
-
-          &nbsp;&bull;&nbsp;&copy;
-          {{ if .Site.Params.since }}
-            {{ .Site.Params.since }} - {{ .Site.LastChange.Format "2006" }}
-          {{ else }}
-            {{ .Site.LastChange.Format "2006" }}
-          {{ end }}
-
+          <img class="logo_copyright" src="{{ .Site.Params.logo_copyright | absURL }}" alt="{{ .Site.Title }}" />
           {{ if .Site.Title }}
-            &nbsp;&bull;&nbsp;
-            <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
+          <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
           {{ end }}
+          &nbsp;&bull;&nbsp;
+          &copy;
+          {{ now.Year }}
         </p>
         <!-- Please don't remove this, keep my open source work credited :) -->
         <p class="credits theme-by text-muted">
