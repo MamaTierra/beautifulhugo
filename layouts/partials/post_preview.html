@@ -3,18 +3,13 @@
         {{ if .Params.image }}
         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="img-title" />
         {{ end }}
-        <h2 class="post-title">{{ .Title }}</h2>
-        {{ if .Params.subtitle }}
-        <h3 class="post-subtitle">
-            {{ .Params.subtitle }}
-        </h3>
-        {{ end }}
-        {{ if .Params.video }}
-        <video loop autoplay muted playsinline class="img-title">
-            <source src="{{ .Params.video }}">
-        </video>
-        {{ end }}
     </a>
+    <h4 class="post-title">{{ .Title }}</h4>
+    {{ if .Params.video }}
+    <video loop autoplay muted playsinline class="img-title">
+        <source src="{{ .Params.video }}">
+    </video>
+    {{ end }}
 
     {{ if .Params.tags }}
     <div class="blog-tags">

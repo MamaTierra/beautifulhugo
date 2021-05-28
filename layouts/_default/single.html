@@ -40,26 +40,12 @@
         {{ end }}
       </article>
 
-      {{ if ne .Type "page" }}
-        <ul class="pager blog-pager">
-          {{ if .PrevInSection }}
-            <li class="previous">
-              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
-            </li>
-          {{ end }}
-          {{ if .NextInSection }}
-            <li class="next">
-              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
 
 
       {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
         {{ if .Site.DisqusShortname }}
           {{ if .Site.Params.delayDisqus }}
-          <div class="disqus-comments">                  
+          <div class="disqus-comments">
             <button id="show-comments" class="btn btn-default" type="button">{{ i18n "show" }} <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}">{{ i18n "comments" }}</span></button>
             <div id="disqus_thread"></div>
 
@@ -86,4 +72,29 @@
     </div>
   </div>
 </div>
+
+{{ if ne .Type "page" }}
+<div class="container-fluid">
+  <div class="row">
+    {{ if .PrevInSection }}
+    <div class="col-sm-6 col-xs-12 hover-fade prevNext">
+      <a href="{{ .PrevInSection.Permalink }}">
+        <p class="title">{{ .PrevInSection.Params.Title }}</p>
+        <img src="{{ .PrevInSection.Params.Image }}">
+      </a>
+    </div>
+    {{ end }}
+    {{ if .NextInSection }}
+    <div class="col-sm-6 col-xs-12 hover-fade prevNext">
+      <a href="{{ .NextInSection.Permalink }}">
+        <p class="title">{{ .NextInSection.Params.Title }}</p>
+        <img src="{{ .NextInSection.Params.Image }}">
+      </a>
+    </div>
+    {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+
 {{ end }}

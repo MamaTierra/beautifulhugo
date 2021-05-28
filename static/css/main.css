@@ -344,7 +344,8 @@ footer .theme-by {
 
 @media only screen and (min-width: 768px) {
   .post-preview {
-    padding: 35px 0;
+    padding: 35px 5px;
+    text-align: center;
   }
 }
 
@@ -422,7 +423,7 @@ footer .theme-by {
 
 @media only screen and (min-width: 768px) {
   .post-preview .post-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -433,10 +434,6 @@ footer .theme-by {
   color: #999;
   font-size: 15px;
   margin-bottom: 30px;
-}
-
-.blog-tags:before {
-  content: "Tags: ";
 }
 
 .blog-tags a {
@@ -456,14 +453,7 @@ footer .theme-by {
 }
 
 .post-preview .blog-tags {
-  margin-top: 5px;
   margin-bottom: 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .post-preview .blog-tags {
-    margin-top: 10px;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -823,4 +813,68 @@ img.logo_copyright {
 
 article.blog-post img {
   padding: 1em 0;
+}
+
+.hover-fade.prevNext {
+  padding: 0 0;
+}
+
+.title {
+  position: absolute;
+  width: 500px;
+  left: 60px;
+  top: 120px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+
+h2.lastPosts {
+  text-align: center;
+  padding: 0.5em 0.5em;
+}
+
+h4.post-title {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 0em;
+  line-height: 1.5em;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 0px;
+}
+
+.hover-fade a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-tags a {
+  display: unset;
+  position: relative;
+}
+
+.hover-fade img {
+  width: 100%;
+  height: auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.hover-fade:hover img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0.5)";
+  filter: brightness(50%);
 }
